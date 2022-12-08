@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">MATZA_NUNEZ_EXAMEN_01</string>
+
+
+
+
+    <string name="txt_ingrese_numeros">Ingrese un número</string>
+
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="btn_segundoactivity">Segundo Activity</string>
+    <string name="btn_cerrar">Cerrar</string>
+
+    <string name="btn_mostrar">Mostrar</string>
+
+    <string name="txt_original">Vector Original</string>
+    <string name="txt_indice">Vector Ordenado</string>
+
+    <string name="txt_orIndice">Vector Indice</string>
 </resources>

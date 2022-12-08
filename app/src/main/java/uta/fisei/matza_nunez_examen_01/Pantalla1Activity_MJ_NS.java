@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
@@ -51,5 +52,29 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
     public void segundoActivity (View view) {
         Intent intent = new Intent(this,Pantalla2Activity_MJ_NS.class);
         activityResult.launch(intent);
+    }
+
+
+
+    int aux;
+    public int[]  mayorMenor(int[] lst){
+
+        int[] lstnueva = new int[lst.length];
+        int i=0;
+        while (i<lst.length-1) {
+            int j=i+1;
+            while (j < lst.length){
+                if (lst[i] < lst[j]){
+                    aux = lst[i];
+                    lst[i]=lst[j];
+                    lst[j]=aux;
+                }
+                j++;
+            };
+            i++;
+        } ;
+
+        return lst;
+
     }
 }

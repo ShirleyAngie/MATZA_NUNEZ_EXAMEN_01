@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -20,8 +21,11 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
 
 
     String[] lstDatosRecibidos;
+    ListView listViewDatosOriginal;
+    ListView listViewDatosIndice;
+    List<String> lstDatos = new ArrayList<String>();
 
-
+    List<String> lstDatosIndice = new ArrayList<String>();
 
     ActivityResultLauncher<Intent> activityResult =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
@@ -53,6 +57,27 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
         Intent intent = new Intent(this,Pantalla2Activity_MJ_NS.class);
         activityResult.launch(intent);
     }
+
+
+
+    public void mostrar(View view) {
+
+        for (int i=0; i<lstDatosRecibidos.length;i++){
+            lstDatos.add(lstDatosRecibidos[i]);
+        }
+
+        ArrayAdapter<String> adapter  = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,lstDatos);
+        listViewDatosOriginal.setAdapter(adapter);
+
+        int[] lstnumeros = new int[lstDatosRecibidos.length];
+        for (int j=0 ; j<lstDatosRecibidos.length;j++){
+            lstnumeros[j]= Integer.valueOf(lstDatosRecibidos[j]);
+        }
+
+
+    }
+
 
 
 

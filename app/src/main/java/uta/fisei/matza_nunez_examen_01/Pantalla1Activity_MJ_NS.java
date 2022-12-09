@@ -49,6 +49,8 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla1_mj_ns);
+        listViewDatosOriginal = findViewById(R.id.listViewOriginal);
+        listViewDatosIndice = findViewById(R.id.listViewIndice);
     }
 
 
@@ -63,28 +65,34 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
     public void mostrar(View view) {
 
         for (int i=0; i<lstDatosRecibidos.length;i++){
+            //lstDatosSalida[i]=lstDatos.get(i);
             lstDatos.add(lstDatosRecibidos[i]);
         }
 
         ArrayAdapter<String> adapter  = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,lstDatos);
+
         listViewDatosOriginal.setAdapter(adapter);
+
+
 
         int[] lstnumeros = new int[lstDatosRecibidos.length];
         for (int j=0 ; j<lstDatosRecibidos.length;j++){
             lstnumeros[j]= Integer.valueOf(lstDatosRecibidos[j]);
         }
 
+
         int[] ordenados = mayorMenor(lstnumeros);
 
         for (int h=0; h<ordenados.length;h++){
+
             lstDatosIndice.add(String.valueOf(ordenados[h]));
         }
 
         ArrayAdapter<String> adapterIndice  = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,lstDatosIndice);
-        listViewDatosIndice.setAdapter(adapterIndice);
 
+        listViewDatosIndice.setAdapter(adapterIndice);
 
     }
 

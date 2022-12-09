@@ -50,14 +50,12 @@ public class Pantalla2Activity_MJ_NS extends AppCompatActivity {
 
 
         String[] lstDatosSalida = new String[contador];
-
-        int i=0;
-        while (i<contador)
-        {
+        for (int i=0; i<contador;i++){
             lstDatosSalida[i]=lstDatos.get(i);
-            i++ ;
         }
+
         Intent intent = new Intent();
+        // intent.putExtra("apellidos",apellidos);
         intent.putExtra("lstDatos", lstDatosSalida);
         setResult(Activity.RESULT_OK, intent);
         finish();

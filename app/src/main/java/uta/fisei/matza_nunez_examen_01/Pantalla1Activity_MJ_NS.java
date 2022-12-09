@@ -120,6 +120,20 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
     }
 
 
+    public int[]  mayorMenorIndice(int[] ordenado, int[] lst2){
+
+
+        for (int i = 0; i < lst2.length; i++)
+        {
+            Log.i("sasda", String.valueOf(lst2[i]));
+        }
+
+
+
+        return ordenado;
+
+    }
+
     public static int buscar(int[] a, int target)
     {
         for (int i = 0; i < a.length; i++)

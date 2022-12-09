@@ -75,6 +75,16 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
             lstnumeros[j]= Integer.valueOf(lstDatosRecibidos[j]);
         }
 
+        int[] ordenados = mayorMenor(lstnumeros);
+
+        for (int h=0; h<ordenados.length;h++){
+            lstDatosIndice.add(String.valueOf(ordenados[h]));
+        }
+
+        ArrayAdapter<String> adapterIndice  = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,lstDatosIndice);
+        listViewDatosIndice.setAdapter(adapterIndice);
+
 
     }
 

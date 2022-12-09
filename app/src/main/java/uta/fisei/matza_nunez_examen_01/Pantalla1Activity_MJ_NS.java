@@ -101,8 +101,6 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
 
     int aux;
     public int[]  mayorMenor(int[] lst){
-
-        int[] lstnueva = new int[lst.length];
         int i=0;
         while (i<lst.length-1) {
             int j=i+1;

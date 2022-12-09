@@ -118,4 +118,17 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
         return lst;
 
     }
+
+
+    public static int buscar(int[] a, int target)
+    {
+        for (int i = 0; i < a.length; i++)
+        {
+            if (a[i] == target) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }

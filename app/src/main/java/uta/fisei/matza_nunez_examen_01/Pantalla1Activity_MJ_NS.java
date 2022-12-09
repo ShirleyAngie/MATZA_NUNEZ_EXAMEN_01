@@ -92,7 +92,7 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
 
         int[] ordenados = mayorMenor(lstnumeros);
 
-        mayorMenorIndice(ordenados,lstnumerosEnviar);
+        int[] ind =  mayorMenorIndice(ordenados,lstnumerosEnviar);
 
         for (int h=0; h<ordenados.length;h++){
 
@@ -133,14 +133,16 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
     public int[]  mayorMenorIndice(int[] ordenado, int[] lst2){
 
 
+        int[] lstnueva = new int[lst2.length];
+
         for (int i = 0; i < lst2.length; i++)
         {
-            Log.i("sasda", String.valueOf(lst2[i]));
+
+            int bb = buscar(lst2,ordenado[i]);
+            lstnueva[i] = bb;
         }
 
-
-
-        return ordenado;
+        return lstnueva;
 
     }
 
@@ -155,4 +157,7 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
 
         return -1;
     }
+
+
+
 }

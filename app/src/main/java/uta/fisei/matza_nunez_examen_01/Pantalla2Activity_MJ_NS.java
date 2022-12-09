@@ -55,7 +55,6 @@ public class Pantalla2Activity_MJ_NS extends AppCompatActivity {
         }
 
         Intent intent = new Intent();
-        // intent.putExtra("apellidos",apellidos);
         intent.putExtra("lstDatos", lstDatosSalida);
         setResult(Activity.RESULT_OK, intent);
         finish();

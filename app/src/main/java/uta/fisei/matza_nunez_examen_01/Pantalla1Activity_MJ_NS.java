@@ -81,8 +81,18 @@ public class Pantalla1Activity_MJ_NS extends AppCompatActivity {
             lstnumeros[j]= Integer.valueOf(lstDatosRecibidos[j]);
         }
 
+        int[] lstnumerosEnviar = new int[lstDatosRecibidos.length];
+        for (int j=0 ; j<lstDatosRecibidos.length;j++){
+            lstnumerosEnviar[j]= Integer.valueOf(lstDatosRecibidos[j]);
+        }
+
+
+
+
 
         int[] ordenados = mayorMenor(lstnumeros);
+
+        mayorMenorIndice(ordenados,lstnumerosEnviar);
 
         for (int h=0; h<ordenados.length;h++){
 
